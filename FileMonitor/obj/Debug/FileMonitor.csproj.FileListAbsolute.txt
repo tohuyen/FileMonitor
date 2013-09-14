@@ -1,7 +1,6 @@
 F:\GITSTUDY\FileMonitor\FileMonitor\bin\Debug\FileMonitor.exe.config
 F:\GITSTUDY\FileMonitor\FileMonitor\bin\Debug\FileMonitor.exe
 F:\GITSTUDY\FileMonitor\FileMonitor\bin\Debug\FileMonitor.pdb
-F:\GITSTUDY\FileMonitor\FileMonitor\obj\Debug\FileMonitor.csprojResolveAssemblyReference.cache
 F:\GITSTUDY\FileMonitor\FileMonitor\obj\Debug\FileMonitor.FrmFileMonitor.resources
 F:\GITSTUDY\FileMonitor\FileMonitor\obj\Debug\FileMonitor.Properties.Resources.resources
 F:\GITSTUDY\FileMonitor\FileMonitor\obj\Debug\FileMonitor.csproj.GenerateResource.Cache
