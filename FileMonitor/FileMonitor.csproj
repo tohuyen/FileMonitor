@@ -46,13 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileRecons.cs">
-      <DependentUpon>FileRecons.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="FileRecons.designer.cs">
+    <Compile Include="FileReconTable.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FileRecons.dbml</DependentUpon>
+      <DependentUpon>FileReconTable.dbml</DependentUpon>
     </Compile>
     <Compile Include="FrmFileMonitor.cs">
       <SubType>Form</SubType>
@@ -68,8 +65,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="FileRecons.dbml.layout">
-      <DependentUpon>FileRecons.dbml</DependentUpon>
+    <None Include="FileReconTable.dbml.layout">
+      <DependentUpon>FileReconTable.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="FrmFileMonitor.resx">
       <DependentUpon>FrmFileMonitor.cs</DependentUpon>
@@ -83,9 +80,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="FileRecons.dbml">
+    <None Include="FileReconTable.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>FileRecons.designer.cs</LastGenOutput>
+      <LastGenOutput>FileReconTable.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\tblFilesRecon_Location.datasource" />

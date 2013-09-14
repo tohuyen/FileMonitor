@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="FileReconTable">
+  <DataContextMoniker Name="/FileReconTableDataContext" />
+  <nestedChildShapes>
+    <classShape Id="badbb1b6-4ba4-42d8-bb22-4bb7ce81b7e9" absoluteBounds="6.25, 2.25, 2, 2.155499674479167">
+      <DataClassMoniker Name="/FileReconTableDataContext/tblFilesRecon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b9c964d1-1742-46a7-a89a-f77909fd2122" absoluteBounds="6.265, 2.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="42127479-6050-48d0-afd6-059531a04681" absoluteBounds="0.75, 2.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/FileReconTableDataContext/tblFilesRecon_Function" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49017d10-933b-4042-84bc-bb3521c16843" absoluteBounds="0.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f40365b0-2626-41f2-9705-d1828f805746" absoluteBounds="3.5, 1.75, 2, 3.309308268229167">
+      <DataClassMoniker Name="/FileReconTableDataContext/tblFilesRecon_Location" />
+      <nestedChildShapes>
+        <elementListCompartment Id="89f0cb42-59c5-4bd4-8a3a-bd1f59265776" absoluteBounds="3.515, 2.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="921626f4-b56c-42af-acbe-a0513a37aba5" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/FileReconTableDataContext/tblFilesRecon_Market" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3bca0f5d-0b17-42bc-98b7-293c697c2b33" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 3.32774983723958); (6.25 : 3.32774983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FileReconTableDataContext/tblFilesRecon_Location/tblFilesRecon_Location_tblFilesRecon" />
+      <nodes>
+        <classShapeMoniker Id="f40365b0-2626-41f2-9705-d1828f805746" />
+        <classShapeMoniker Id="badbb1b6-4ba4-42d8-bb22-4bb7ce81b7e9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.34699625651042); (3.5 : 3.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FileReconTableDataContext/tblFilesRecon_Function/tblFilesRecon_Function_tblFilesRecon_Location" />
+      <nodes>
+        <classShapeMoniker Id="42127479-6050-48d0-afd6-059531a04681" />
+        <classShapeMoniker Id="f40365b0-2626-41f2-9705-d1828f805746" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.2499995); (4.5 : 1.2499995); (4.5 : 1.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FileReconTableDataContext/tblFilesRecon_Market/tblFilesRecon_Market_tblFilesRecon_Location" />
+      <nodes>
+        <classShapeMoniker Id="921626f4-b56c-42af-acbe-a0513a37aba5" />
+        <classShapeMoniker Id="f40365b0-2626-41f2-9705-d1828f805746" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

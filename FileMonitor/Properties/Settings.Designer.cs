@@ -32,5 +32,16 @@ namespace FileMonitor.Properties {
                 return ((string)(this["OperationsConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ELGIN;Initial Catalog=Operations;Persist Security Info=True;User ID=s" +
+            "a;Password=HarryPotter")]
+        public string OperationsConnectionString1 {
+            get {
+                return ((string)(this["OperationsConnectionString1"]));
+            }
+        }
     }
 }

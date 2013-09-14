@@ -23,7 +23,7 @@ namespace FileMonitor
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Operations")]
-	public partial class FileReconsDataContext : System.Data.Linq.DataContext
+	public partial class FileReconTableDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -42,36 +42,33 @@ namespace FileMonitor
     partial void InserttblFilesRecon_Market(tblFilesRecon_Market instance);
     partial void UpdatetblFilesRecon_Market(tblFilesRecon_Market instance);
     partial void DeletetblFilesRecon_Market(tblFilesRecon_Market instance);
-    partial void InserttblTransferAgent_TradeType(tblTransferAgent_TradeType instance);
-    partial void UpdatetblTransferAgent_TradeType(tblTransferAgent_TradeType instance);
-    partial void DeletetblTransferAgent_TradeType(tblTransferAgent_TradeType instance);
     #endregion
 		
-		public FileReconsDataContext() : 
-				base(global::FileMonitor.Properties.Settings.Default.OperationsConnectionString, mappingSource)
+		public FileReconTableDataContext() : 
+				base(global::FileMonitor.Properties.Settings.Default.OperationsConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public FileReconsDataContext(string connection) : 
+		public FileReconTableDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public FileReconsDataContext(System.Data.IDbConnection connection) : 
+		public FileReconTableDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public FileReconsDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public FileReconTableDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public FileReconsDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public FileReconTableDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -106,14 +103,6 @@ namespace FileMonitor
 			get
 			{
 				return this.GetTable<tblFilesRecon_Market>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tblTransferAgent_TradeType> tblTransferAgent_TradeTypes
-		{
-			get
-			{
-				return this.GetTable<tblTransferAgent_TradeType>();
 			}
 		}
 	}
@@ -1050,164 +1039,6 @@ namespace FileMonitor
 		{
 			this.SendPropertyChanging();
 			entity.tblFilesRecon_Market = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblTransferAgent_TradeTypes")]
-	public partial class tblTransferAgent_TradeType : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _AccountMarketId;
-		
-		private string _TradeType;
-		
-		private string _TradeTypeDescription;
-		
-		private string _DFATradeType;
-		
-		private bool _ReversalIn;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnAccountMarketIdChanging(string value);
-    partial void OnAccountMarketIdChanged();
-    partial void OnTradeTypeChanging(string value);
-    partial void OnTradeTypeChanged();
-    partial void OnTradeTypeDescriptionChanging(string value);
-    partial void OnTradeTypeDescriptionChanged();
-    partial void OnDFATradeTypeChanging(string value);
-    partial void OnDFATradeTypeChanged();
-    partial void OnReversalInChanging(bool value);
-    partial void OnReversalInChanged();
-    #endregion
-		
-		public tblTransferAgent_TradeType()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountMarketId", DbType="VarChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string AccountMarketId
-		{
-			get
-			{
-				return this._AccountMarketId;
-			}
-			set
-			{
-				if ((this._AccountMarketId != value))
-				{
-					this.OnAccountMarketIdChanging(value);
-					this.SendPropertyChanging();
-					this._AccountMarketId = value;
-					this.SendPropertyChanged("AccountMarketId");
-					this.OnAccountMarketIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TradeType", DbType="VarChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string TradeType
-		{
-			get
-			{
-				return this._TradeType;
-			}
-			set
-			{
-				if ((this._TradeType != value))
-				{
-					this.OnTradeTypeChanging(value);
-					this.SendPropertyChanging();
-					this._TradeType = value;
-					this.SendPropertyChanged("TradeType");
-					this.OnTradeTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TradeTypeDescription", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string TradeTypeDescription
-		{
-			get
-			{
-				return this._TradeTypeDescription;
-			}
-			set
-			{
-				if ((this._TradeTypeDescription != value))
-				{
-					this.OnTradeTypeDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._TradeTypeDescription = value;
-					this.SendPropertyChanged("TradeTypeDescription");
-					this.OnTradeTypeDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DFATradeType", DbType="VarChar(2) NOT NULL", CanBeNull=false)]
-		public string DFATradeType
-		{
-			get
-			{
-				return this._DFATradeType;
-			}
-			set
-			{
-				if ((this._DFATradeType != value))
-				{
-					this.OnDFATradeTypeChanging(value);
-					this.SendPropertyChanging();
-					this._DFATradeType = value;
-					this.SendPropertyChanged("DFATradeType");
-					this.OnDFATradeTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReversalIn", DbType="Bit NOT NULL")]
-		public bool ReversalIn
-		{
-			get
-			{
-				return this._ReversalIn;
-			}
-			set
-			{
-				if ((this._ReversalIn != value))
-				{
-					this.OnReversalInChanging(value);
-					this.SendPropertyChanging();
-					this._ReversalIn = value;
-					this.SendPropertyChanged("ReversalIn");
-					this.OnReversalInChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 }

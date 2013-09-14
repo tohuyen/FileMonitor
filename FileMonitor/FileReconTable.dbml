@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Operations" Class="FileReconsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ELGIN;Initial Catalog=Operations;Integrated Security=True" SettingsObjectName="FileMonitor.Properties.Settings" SettingsPropertyName="OperationsConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Operations" Class="FileReconTableDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ELGIN;Initial Catalog=Operations;Persist Security Info=True;User ID=sa" SettingsObjectName="FileMonitor.Properties.Settings" SettingsPropertyName="OperationsConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tblFilesRecon" Member="tblFilesRecons">
     <Type Name="tblFilesRecon">
       <Column Name="FileId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -44,15 +44,6 @@
       <Column Name="MarketId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Market" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="tblFilesRecon_Market_tblFilesRecon_Location" Member="tblFilesRecon_Locations" ThisKey="MarketId" OtherKey="MarketId" Type="tblFilesRecon_Location" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblTransferAgent_TradeTypes" Member="tblTransferAgent_TradeTypes">
-    <Type Name="tblTransferAgent_TradeType">
-      <Column Name="AccountMarketId" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TradeType" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TradeTypeDescription" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DFATradeType" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
-      <Column Name="ReversalIn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>
