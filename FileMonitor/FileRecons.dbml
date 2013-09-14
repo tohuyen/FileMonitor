@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Operations" Class="FileReconsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ELGIN;Initial Catalog=Operations;Integrated Security=True" SettingsObjectName="FileMonitor.Properties.Settings" SettingsPropertyName="OperationsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblFilesRecon" Member="tblFilesRecons">
+    <Type Name="tblFilesRecon">
+      <Column Name="FileId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NChar(120) NOT NULL" CanBeNull="false" />
+      <Column Name="FileDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PathId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NChar(120)" CanBeNull="true" />
+      <Column Name="InsertedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertedBy" Type="System.String" DbType="NChar(60) NOT NULL" CanBeNull="false" />
+      <Association Name="tblFilesRecon_Location_tblFilesRecon" Member="tblFilesRecon_Location" ThisKey="PathId" OtherKey="PathId" Type="tblFilesRecon_Location" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFilesRecon_Function" Member="tblFilesRecon_Functions">
+    <Type Name="tblFilesRecon_Function">
+      <Column Name="FunctionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FunctionName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tblFilesRecon_Function_tblFilesRecon_Location" Member="tblFilesRecon_Locations" ThisKey="FunctionId" OtherKey="FunctionId" Type="tblFilesRecon_Location" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFilesRecon_Locations" Member="tblFilesRecon_Locations">
+    <Type Name="tblFilesRecon_Location">
+      <Column Name="PathId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Path" Type="System.String" DbType="NChar(120) NOT NULL" CanBeNull="false" />
+      <Column Name="FilePattern" Type="System.String" DbType="NChar(120) NOT NULL" CanBeNull="false" />
+      <Column Name="DatePattern" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NChar(120) NOT NULL" CanBeNull="false" />
+      <Column Name="ArrivalTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="EmailNotification" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="TimeZone" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DateVariation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsRecursive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MarketId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FunctionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblFilesRecon_Location_tblFilesRecon" Member="tblFilesRecons" ThisKey="PathId" OtherKey="PathId" Type="tblFilesRecon" />
+      <Association Name="tblFilesRecon_Function_tblFilesRecon_Location" Member="tblFilesRecon_Function" ThisKey="FunctionId" OtherKey="FunctionId" Type="tblFilesRecon_Function" IsForeignKey="true" />
+      <Association Name="tblFilesRecon_Market_tblFilesRecon_Location" Member="tblFilesRecon_Market" ThisKey="MarketId" OtherKey="MarketId" Type="tblFilesRecon_Market" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFilesRecon_Market" Member="tblFilesRecon_Markets">
+    <Type Name="tblFilesRecon_Market">
+      <Column Name="MarketId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Market" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tblFilesRecon_Market_tblFilesRecon_Location" Member="tblFilesRecon_Locations" ThisKey="MarketId" OtherKey="MarketId" Type="tblFilesRecon_Location" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTransferAgent_TradeTypes" Member="tblTransferAgent_TradeTypes">
+    <Type Name="tblTransferAgent_TradeType">
+      <Column Name="AccountMarketId" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TradeType" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TradeTypeDescription" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DFATradeType" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="ReversalIn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
